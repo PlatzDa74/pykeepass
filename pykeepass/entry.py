@@ -25,6 +25,9 @@ reserved_keys = [
     'Times',
     'History',
     'Notes',
+    'sr',
+    'home',
+    'owner',
     'otp'
 ]
 
@@ -33,7 +36,8 @@ reserved_keys = [
 class Entry(BaseElement):
 
     def __init__(self, title=None, username=None, password=None, url=None,
-                 notes=None, otp=None, tags=None, expires=False, expiry_time=None,
+                 notes=None, sr=None, home=None, owner=None, otp=None,
+                 tags=None, expires=False, expiry_time=None,
                  icon=None, autotype_sequence=None, autotype_enabled=True,
                  element=None, kp=None):
 
@@ -56,6 +60,12 @@ class Entry(BaseElement):
                 self._element.append(E.String(E.Key('URL'), E.Value(url)))
             if notes:
                 self._element.append(E.String(E.Key('Notes'), E.Value(notes)))
+            if sr:
+                self._element.append(E.String(E.Key('sr'), E.Value(sr)))
+            if home:
+                self._element.append(E.String(E.Key('home'), E.Value(home)))
+            if owner:
+                self._element.append(E.String(E.Key('owner'), E.Value(owner)))
             if otp:
                 self._element.append(E.String(E.Key('otp'), E.Value(otp)))
             if tags:
@@ -205,6 +215,33 @@ class Entry(BaseElement):
         # Accept both str or list
         v = ';'.join(value if type(value) is list else [value])
         return self._set_subelement_text('Tags', v)
+
+    @property
+    def sr(self):
+        """str: get or set entry SR text. (defacto standard)"""
+        return self._get_string_field('sr')
+
+    @sr.setter
+    def sr(self, value):
+        return self._set_string_field('sr', value)
+
+    @property
+    def home(self):
+        """str: get or set entry HOME text. (defacto standard)"""
+        return self._get_string_field('home')
+
+    @home.setter
+    def home(self, value):
+        return self._set_string_field('home', value)
+
+    @property
+    def owner(self):
+        """str: get or set entry OWNER text. (defacto standard)"""
+        return self._get_string_field('owner')
+
+    @owner.setter
+    def owner(self, value):
+        return self._set_string_field('owner', value)
 
     @property
     def otp(self):

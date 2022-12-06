@@ -504,7 +504,8 @@ class PyKeePass(object):
 
     def add_entry(self, destination_group, title, username,
                   password, url=None, notes=None, expiry_time=None,
-                  tags=None, otp=None, icon=None, force_creation=False):
+                  tags=None, sr=None, home=None, owner=None,
+                  otp=None, icon=None, force_creation=False):
 
         entries = self.find_entries(
             title=title,
@@ -527,6 +528,9 @@ class PyKeePass(object):
                 username=username,
                 password=password,
                 notes=notes,
+                sr=sr,
+                home=home,
+                owner=owner,
                 otp=otp,
                 url=url,
                 tags=tags,

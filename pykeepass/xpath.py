@@ -35,6 +35,9 @@ entry_xp = {
         'string': '/String/Key[text()="{}"]/../Value[text()="{}"]/../..',
         'autotype_sequence': '/AutoType/DefaultSequence[text()="{}"]/../..',
         'autotype_enabled': '/AutoType/Enabled[text()="{}"]/../..',
+        'sr': '/String/Key[text()="sr"]/../Value[text()="{}"]/../..',
+        'home': '/String/Key[text()="home"]/../Value[text()="{}"]/../..',
+        'owner': '/String/Key[text()="owner"]/../Value[text()="{}"]/../..',
         'otp': '/String/Key[text()="otp"]/../Value[text()="{}"]/../..',
     },
     True: {
@@ -48,6 +51,9 @@ entry_xp = {
         'string': '/String/Key[text()="{}"]/../Value[re:test(text(), "{}", "{flags}")]/../..',
         'autotype_sequence': '/AutoType/DefaultSequence[re:test(text(), "{}", "{flags}")]/../..',
         'autotype_enabled': '/AutoType/Enabled[re:test(text(), "{}", "{flags}")]/../..',
+        'sr': '/String/Key[text()="sr"]/../Value[re:test(text(), "{}", "{flags}")]/../..',
+        'home': '/String/Key[text()="home"]/../Value[re:test(text(), "{}", "{flags}")]/../..',
+        'owner': '/String/Key[text()="owner"]/../Value[re:test(text(), "{}", "{flags}")]/../..',
         'otp': '/String/Key[text()="otp"]/../Value[re:test(text(), "{}", "{flags}")]/../..',
     }
 }
